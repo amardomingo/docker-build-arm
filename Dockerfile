@@ -3,8 +3,9 @@ MAINTAINER Alberto Mardomingo <alberto.mardomingo@bq.com>
 
 RUN apt-get -qq update
 
-RUN apt-get install -y distcc libepub-dev libudev-dev qemu-user-static multistrap g++-arm-linux-gnueabi
+RUN apt-get install -y distcc libepub-dev libudev-dev qemu-user-static multistrap g++-arm-linux-gnueabi qemu-kvm-extras-static
 RUN apt-get install -y qt4-dev-tools qt4-qmake
+RUN apt-get install -y mercurial
 RUN ln -s /usr/bin/moc-qt4 /usr/bin/moc-48
 
 RUN mkdir -p /opt/code
