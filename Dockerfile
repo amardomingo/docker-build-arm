@@ -20,7 +20,12 @@ RUN mkdir -p /opt/code
 
 WORKDIR /opt/code
 
+ADD entrypoint.sh /entrypoint.sh
 ADD build.sh /build.sh
 ADD qmake.conf /opt/qmake.conf
 
-CMD /build.sh
+RUN useradd -s /bin/bash -u 1006 jenkins
+RUN chmod +x /entrypoint.sh
+RUN echo "jenkins ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers
+
+CMD /entrypoint.sh
