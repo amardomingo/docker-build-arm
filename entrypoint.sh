@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if [ -d "/opt/code" ] ; then
-  sudo -E -u jenkins bash -c "/build.sh"
-fi
+bash -c "/build.sh"
+
+chown jenkins:jenkins /opt/code
